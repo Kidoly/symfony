@@ -5,4 +5,13 @@
 {% block body %}
     <h1>Bienvenue sur la photothèque de chatons</h1>
     <p>Version fichier</p>
+    <ul>
+        {% for dossier in dossiers %}
+        <li>
+            <a href="{{ path('app_dossier', {'nomDuDossier': dossier.filename}) }}">
+                {{ dossier.filename }}
+            </a>
+        </li>
+        {% endfor %}
+    </ul>
 {% endblock %}
